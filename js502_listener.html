@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#caja1 {
+			width: 200px;
+			height: 200px;
+			padding: 50px;
+			background-color: red;
+		}
+		#caja2 {
+			width: 100px;
+			height: 100px;
+			border: 1px solid green;
+			background-color: green;
+		}
+			
+	</style>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//activar listener
+			$('#caja1').on('click',saludar1)
+			$('#caja2').on('click',saludar2)
+		})	
+			
+		function saludar1(){
+			alert('saludar1')
+		}
+		function saludar2(event){
+			event.stopPropagation(); // no propaga el evento a las cajas contenedoras
+			alert('saludar2')
+
+		}
+	</script>
+</head>
+<body>
+		<div id="caja1">
+			<div id="caja2"></div>
+		</div>
+</body>
+	
+		
+		
+		
+		
+
+	
+</html>
